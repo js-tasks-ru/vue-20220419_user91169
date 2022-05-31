@@ -11,14 +11,10 @@ export default defineComponent({
       type: String,
     },
   }, 
-  computed:{
-    resultImage(){
-      return (this.image ? this.image :  "https://course-vue.javascript.ru/api/images/2");
-    },
-  },
+ 
 
   template: `
-    <div class="meetup-cover" :style="\`--bg-url: url('\${resultImage}')\`">
+    <div class="meetup-cover" :style="image && \`--bg-url: url('\${image}')\`">
         <h1 class="meetup-cover__title">{{ title }}</h1>
     </div>`,
 });
